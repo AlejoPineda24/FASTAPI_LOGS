@@ -1,0 +1,3 @@
+{"fecha": "2026-04-08 11:39:58", "accion": "ACTUALIZAR", "detalle": "Producto actualizado", "producto": {"antes": {"codigo": 5, "nombre": "Audifonos", "valor": 300000.0, "existencia": 15}, "despues": {"codigo": 5, "nombre": "Consola", "valor": 30000000.0, "existencia": 2}}}
+{"fecha": "2026-04-08 11:40:26", "accion": "ELIMINAR", "detalle": "Producto eliminado", "producto": {"codigo": 5, "nombre": "Consola", "valor": 30000000.0, "existencia": 2}}
+{"fecha": "2026-04-08 11:40:27", "accion": "ELIMINAR", "detalle": "Producto eliminado", "producto": {"codigo": 5, "nombre": "Audifonos", "valor": 300000.0, "existencia": 15}}
