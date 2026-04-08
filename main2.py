@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Body, HTTPException
 from datetime import datetime
 import json
+import csv
 
 app = FastAPI()
 
@@ -28,15 +29,28 @@ productos = [
 
 # Función de historial
 def registrar_historial(accion: str, producto: dict, detalle: str):
-    log = {
-        "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "accion": accion,
-        "detalle": detalle,
-        "producto": producto
-    }
+    archivo_existe = False
 
-    with open("historial.txt", "a") as archivo:
-        archivo.write(json.dumps(log) + "\n")
+    try:
+        with open("historial.csv", "r"):
+            archivo_existe = True
+    except:
+        archivo_existe = False
+
+    with open("historial.csv", "a", newline='') as archivo:
+        writer = csv.writer(archivo)
+
+        # Si el archivo no existe, escribe encabezados
+        if not archivo_existe:
+            writer.writerow(["fecha", "accion", "detalle", "producto"])
+
+        # Escribir fila
+        writer.writerow([
+            datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            accion,
+            detalle,
+            str(producto)
+        ])
 
 # Endpoints básicos
 @app.get('/')
