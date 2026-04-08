@@ -204,7 +204,7 @@ def eliminar_producto(codigo: int):
 @app.get('/historial')
 def ver_historial():
     try:
-        with open("historial.txt", "r") as archivo:
-            return [line.strip() for line in archivo]
+        with open("historial.csv", "r") as archivo:
+            return archivo.read()
     except:
-        return {"mensaje": "No hay historial aún"}
+        return {"mensaje": "No hay historial"}
