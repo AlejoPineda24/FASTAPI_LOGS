@@ -1,6 +1,5 @@
 from fastapi import FastAPI, Body, HTTPException
 from datetime import datetime
-import json
 import csv
 
 app = FastAPI()

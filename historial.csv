@@ -1,0 +1,3 @@
+fecha,accion,detalle,producto
+2026-04-08 12:33:35,CREAR,Producto creado correctamente,"{'codigo': 4, 'nombre': 'Consola', 'valor': 2000000, 'existencia': 5}"
+2026-04-08 12:34:04,CREAR,Producto creado correctamente,"{'codigo': 5, 'nombre': 'Control gamer', 'valor': 360000, 'existencia': 14}"
